@@ -1,0 +1,16 @@
+.header-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #333;
+  padding: 10px;
+}
+.logo {
+  max-height: 50px;
+}
+.social-links a {
+  margin: 0 10px;
+}
+.social-links img {
+  max-height: 25px;
+}

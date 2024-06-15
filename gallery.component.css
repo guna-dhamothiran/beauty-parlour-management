@@ -1,0 +1,37 @@
+.gallery-container {
+  text-align: center;
+  padding: 20px;
+}
+.cards {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+  padding: 20px;
+}
+.card {
+  background-color: #f9f9f9;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  width: calc(25% - 20px); /* Adjust this to fit more or fewer cards per row */
+  max-width: 300px;
+  margin: 10px;
+  overflow: hidden;
+}
+.card img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+.card-body {
+  padding: 15px;
+}
+.card-title {
+  font-size: 1.25em;
+  margin-bottom: 10px;
+}
+.card-text {
+  font-size: 1em;
+  color: #333;
+}

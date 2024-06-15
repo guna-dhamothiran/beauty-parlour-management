@@ -1,0 +1,25 @@
+.contact-container {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 20px;
+  text-align: center;
+
+}
+
+.contact1{
+  text-align: center;
+
+}
+
+h2,h3{
+  color: rgb(190, 6, 6);
+}
+
+.newsletter{
+  text-align: center;
+}
+mat-form-field {
+  width: 100%;
+  margin-bottom: 20px;
+}
+

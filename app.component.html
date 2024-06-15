@@ -1,0 +1,21 @@
+<app-header></app-header>
+<nav>
+    <div class="hamburger" (click)="toggleMenu()">
+      <div></div>
+      <div></div>
+      <div></div>
+    </div>
+    <ul [ngClass]="{'active': menuActive}">
+        <ul>
+            <li><a routerLink="/">Home</a></li>
+            <li><a routerLink="/services">Services</a></li>
+            <li><a routerLink="/products">Products</a></li>
+            <li><a routerLink="/contact">Contact</a></li>
+            <li><a routerLink="/gallery">Gallery</a></li>
+            <li><a routerLink="/appointment">Request an Appointment</a></li>
+          </ul>
+    </ul>
+  </nav>
+  <router-outlet></router-outlet>
+<router-outlet></router-outlet>
+<app-footer></app-footer>

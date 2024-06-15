@@ -1,0 +1,71 @@
+.products-container {
+  text-align: center;
+  padding: 20px;
+}
+
+.appointment-button {
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  margin: 10px;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.appointment-button:hover {
+  background-color: #45a049;
+}
+
+.cards {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+  padding: 20px;
+}
+
+.card {
+  background-color: #f9f9f9;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  width: calc(33% - 20px); /* Adjust this to fit more or fewer cards per row */
+  max-width: 300px;
+  margin: 10px;
+  overflow: hidden;
+}
+
+.card img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.card-body {
+  padding: 15px;
+}
+
+.card-body h2 {
+  font-size: 1.25em;
+  margin-bottom: 10px;
+}
+
+.card-body p {
+  font-size: 1em;
+  color: #333;
+}
+
+.product-link {
+  display: inline-block;
+  margin-top: 10px;
+  padding: 5px 10px;
+  background-color: #4CAF50;
+  color: white;
+  border-radius: 5px;
+  text-decoration: none;
+}
+
+.product-link:hover {
+  background-color: #45a049;
+}

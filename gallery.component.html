@@ -1,0 +1,15 @@
+<div class="gallery-container">
+  <h1>Our Journal</h1>
+  <h2>The Beauty Parlour Journal</h2>
+  <p>Our blog is intended to help answer your hair-related questions and provide information about healthy hair choices and products. We also offer styling tips and tricks, alert you to new trends in hair, and provide updates about the salon. If you have any questions, blog ideas, or suggestions, please email <a href="mailto:organicbeautyparlour@gmail.com">organicbeautyparlourgmail.com</a>. Thank you for your continued support.</p>
+
+  <div class="cards">
+    <div class="card" *ngFor="let card of cards">
+      <img [src]="card.image" [alt]="card.title">
+      <div class="card-body">
+        <div class="card-title">{{ card.title }}</div>
+        <div class="card-text">{{ card.text }}</div>
+      </div>
+    </div>
+  </div>
+</div>

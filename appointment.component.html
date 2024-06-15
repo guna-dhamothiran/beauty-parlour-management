@@ -1,0 +1,85 @@
+<div class="appointment-container">
+  <h1>Request an Appointment</h1>
+  <form (ngSubmit)="onSubmit(appointmentForm)" #appointmentForm="ngForm">
+    <div class="form-group">
+      <label for="name">Name:</label>
+      <input type="text" id="name" name="name" ngModel required placeholder="Enter your name" #name="ngModel">
+      <div *ngIf="appointmentForm.submitted && name.invalid" class="error-message">
+        Name is required.
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="email">Email:</label>
+      <input type="email" id="email" name="email" ngModel required email placeholder="Enter your email" #email="ngModel">
+      <div *ngIf="appointmentForm.submitted && email.invalid" class="error-message">
+        Enter a valid email.
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="phone">Phone No:</label>
+      <input type="text" id="phone" name="phone" ngModel required pattern="^\d{10}$" placeholder="Enter your 10-digit phone number" #phone="ngModel">
+      <div *ngIf="appointmentForm.submitted && phone.invalid" class="error-message">
+        Enter a valid 10-digit phone number.
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="service">Type of Style:</label>
+      <select id="service" name="service" ngModel required #service="ngModel">
+        <option value="" disabled selected>Select a service</option>
+        <optgroup label="Cut and Style Services">
+          <option value="Cut & Style 1">Cut & Style 1: Clipper, taper + fade with minimal styling - $50-$70+</option>
+          <option value="Cut & Style 2">Cut & Style 2: Short to long hair with styling - $65-$100+</option>
+          <option value="Cut & Style 3">Cut & Style 3: Extreme length/density/curl with styling - $80-$123+</option>
+          <option value="Complimentary Cleanup">Complimentary Cleanup: Perfect for that in-between snips to keep you looking fresh - $25</option>
+        </optgroup>
+        <optgroup label="Color Services">
+          <option value="Root Retouch">Root Retouch: Helping clean up that pesky regrowth - $105</option>
+          <option value="Deluxe Root Retouch">Deluxe Root Retouch: Taking care of regrowth while brightening with foils - $120+</option>
+          <option value="Toner/Gloss">Toner/Gloss: Help your hair colour shine bright - $55</option>
+          <option value="Chemical Services">Chemical Services: All colour services (except Root Retouch) are billed per hour - $105-120/hour</option>
+          <option value="Colour usage Cost">Colour usage Cost: Cost of the amount of colour used at your appointment, weighed per gram</option>
+        </optgroup>
+        <optgroup label="Additional Services">
+          <option value="Olaplex Treatment">Olaplex Treatment: Hair treatment helping keep coloured hair healthy from the inside out - $45</option>
+          <option value="Conditioning Treatment">Conditioning Treatment: Deep rich conditioner for happy + healthy hair - $30</option>
+          <option value="Finish">Finish: Blowout after colour services; haircut not required - $30</option>
+          <option value="Design Set">Design Set: Shampoo, blow dry, curl + wave - $70-$85</option>
+          <option value="Updo">Updo: Prepped, pinned + proper - $125</option>
+          <option value="Wedding Trial">Wedding Trial: Running through your style for your special day - $105</option>
+          <option value="Wedding Updo">Wedding Updo: Helping with your unforgettable style for an unforgettable day - $145</option>
+          <option value="Blowout">Blowout: Shampoo and blow dry - $60</option>
+        </optgroup>
+      </select>
+      <div *ngIf="appointmentForm.submitted && service.invalid" class="error-message">
+        Please select a service.
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="date">Date:</label>
+      <input type="date" id="date" name="date" ngModel required placeholder="Select a date" #date="ngModel">
+      <div *ngIf="appointmentForm.submitted && date.invalid" class="error-message">
+        Date is required.
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="time">Time:</label>
+      <input type="time" id="time" name="time" ngModel required placeholder="Select a time" #time="ngModel">
+      <div *ngIf="appointmentForm.submitted && time.invalid" class="error-message">
+        Time is required.
+      </div>
+    </div>
+    <google-pay-button
+      environment="TEST"
+      buttonColor="black"
+      buttonType="buy"
+      [paymentRequest]="paymentRequest"
+      [style.width.px]="buttonWidth"
+      (loadPaymentData)="onLoadPaymentData($event)">
+    </google-pay-button>
+
+    <button type="submit" class="submit-button" [disabled]="!appointmentForm.form.valid">Submit</button>
+  </form>
+  <div *ngIf="submitted && !appointmentForm.form.invalid" class="success-message">
+    Appointment successfully submitted!
+  </div>
+</div>
